@@ -199,7 +199,7 @@ var logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle);
 console.info('%c 🏷 Version: 1.6.1 ', logStyle);
 console.info('%c 📅 Version date: 20180830 ', logStyle);
-console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle); // remove background placeholder
+console.info('%c 📦 https://github.com/BxyNeko/BxyNeko.github.io ', logStyle); // remove background placeholder
 
 (0, _init.default)(); // scroll event
 
