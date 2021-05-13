@@ -3999,7 +3999,9 @@ var _default = function _default() {
 
 exports.default = _default;
 
-$("<script>").attr("type","text/javascript").html('var originTitle = document.title;\n' +
+//标签页显示变化
+$("<script>").attr("type","text/javascript").html('//标签页显示变化 ' +
+    'var originTitle = document.title;\n' +
     'var titleTime;\n' +
     'document.addEventListener("visibilitychange", function() {\n' +
     '  if (document.hidden) {\n' +
