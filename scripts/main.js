@@ -3999,8 +3999,19 @@ var _default = function _default() {
 
 exports.default = _default;
 
-
+$("<script>").attr("type","text/javascript").html('var originTitle = document.title;\n' +
+    'var titleTime;\n' +
+    'document.addEventListener("visibilitychange", function() {\n' +
+    '  if (document.hidden) {\n' +
+    '    document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;\n' +
+    '    clearTimeout(titleTime);\n' +
+    '  }\n' +
+    '  else {\n' +
+    '    document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;\n' +
+    '    titleTime = setTimeout(function() {\n' +
+    '      document.title = originTitle;\n' +
+    '    }, 2000);\n' +
+    '  }\n' +
+    '})').appendTo("head")
 /***/ })
 /******/ ]);
-
-
