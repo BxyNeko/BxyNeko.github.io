@@ -4000,7 +4000,7 @@ var _default = function _default() {
 exports.default = _default;
 
 //标签页显示变化
-$("<script>").attr("type","text/javascript").html('//标签页显示变化 ' +
+$("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
     'var originTitle = document.title;\n' +
     'var titleTime;\n' +
     'document.addEventListener("visibilitychange", function() {\n' +
