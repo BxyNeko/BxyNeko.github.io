@@ -247,8 +247,7 @@ var init = function init() {
       introPlaceholder = $('.site-intro-placeholder:first'),
       bgCSS = $introImg.css('background-image'),
       bgRegResult = bgCSS.match(/url\("*([^"]*)"*\)/);
-
-
+  console.log(bgCSS)
   if (bgRegResult.length < 2) {
     console.log('...');
     console.log(bgRegResult);
@@ -257,7 +256,7 @@ var init = function init() {
 
   var bgURL = bgRegResult[1],
       img = new Image();
-
+  console.log(bgURL)
   img.onload = function () {
     // window.alert()
     // setTimeout(function () {
@@ -267,6 +266,7 @@ var init = function init() {
   };
 
   img.src = bgURL;
+  console.log(img.src)
   document.addEventListener('DOMContentLoaded', function () {
     $('.container').removeClass('container-unloaded');
     $('.footer').removeClass('footer-unloaded');
