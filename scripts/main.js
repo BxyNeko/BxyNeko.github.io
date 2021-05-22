@@ -248,6 +248,7 @@ var init = function init() {
       bgCSS = $introImg.css('background-image'),
       bgRegResult = bgCSS.match(/url\("*([^"]*)"*\)/);
 
+
   if (bgRegResult.length < 2) {
     console.log('...');
     console.log(bgRegResult);
