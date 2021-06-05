@@ -4062,15 +4062,15 @@ $(window).resize(function () {
     }
 
 })
-      let zc = document.querySelector('#zc');
-      let cj = document.querySelector('#cj');
-
-      zc.addEventListener('play', e => {
-        cj.pause();
-      })
-      cj.addEventListener('play', e => {
-        zc.pause();
-      })
+      // let zc = document.querySelector('#zc');
+      // let cj = document.querySelector('#cj');
+      //
+      // zc.addEventListener('play', e => {
+      //   cj.pause();
+      // })
+      // cj.addEventListener('play', e => {
+      //   zc.pause();
+      // })
 // 获取url地址来判断
 // setTimeout(function () {
 //     if(window.location.pathname==="/2021-05-02/hello-world/"){
