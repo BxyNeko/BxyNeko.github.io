@@ -4017,8 +4017,10 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
 
 //根据判断来修改css样式
 if($(window).outerWidth(true)<=980){
-    $("figure>div").attr("style","")
-    $("figure").css("margin","1em 0");
+    if($("figure")[0]){
+      $("figure>div").attr("style","")
+      $("figure").css("margin","1em 0");
+    }
 }else{
     if($("figure")[0]){
         $(".main").css("width","100%");
@@ -4054,28 +4056,31 @@ $(window).resize(function () {
             $("figure").attr("style","");
         }
     }else{
-        $("figure>div").attr("style","");
-        $(".main").attr("style","");
-        $(".main>.license-wrapper").attr("style","");
-        $(".main>.post-paginator").attr("style","");
-        $("figure").css("margin","1em 0");
+        if($("figure")[0]){
+          $("figure>div").attr("style","");
+          $(".main").attr("style","");
+          $(".main>.license-wrapper").attr("style","");
+          $(".main>.post-paginator").attr("style","");
+          $("figure").css("margin","1em 0");
+        }
     }
 
 })
-      // 获取url地址来判断
-      setTimeout(function () {
-        if(window.location.pathname==="/2021-06-05/video/"){
-          let zc = document.querySelector('#zc');
-          let cj = document.querySelector('#cj');
+// 获取url地址来判断
+setTimeout(function () {
+  if(window.location.pathname==="/2021-06-05/video/"){
+    console.log(1)
+    let zc = document.querySelector('#zc');
+    let cj = document.querySelector('#cj');
 
-          zc.addEventListener('play', e => {
-            cj.pause();
-          })
-          cj.addEventListener('play', e => {
-            zc.pause();
-          })
-        }
-      },0)
+    zc.addEventListener('play', e => {
+      cj.pause();
+    })
+    cj.addEventListener('play', e => {
+      zc.pause();
+    })
+  }
+},0)
 // 获取url地址来判断
 // setTimeout(function () {
 //     if(window.location.pathname==="/2021-05-02/hello-world/"){
