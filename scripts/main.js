@@ -4069,7 +4069,6 @@ $(window).resize(function () {
 // 获取url地址来判断
 setTimeout(function () {
   if(window.location.pathname==="/2021-06-05/video/"){
-    console.log(1)
     let zc = document.querySelector('#zc');
     let cj = document.querySelector('#cj');
 
