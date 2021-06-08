@@ -4066,6 +4066,7 @@ $(window).resize(function () {
     }
 
 })
+
 // 获取url地址来判断
 setTimeout(function () {
   if(window.location.pathname==="/2021-06-05/video/"){
@@ -4080,6 +4081,42 @@ setTimeout(function () {
     })
   }
 },0)
+
+// 进度条
+$(()=>{
+  if(window.location.pathname==="/about/") {
+    $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 90,\n' +
+      '    isAuto: true\n' +
+      '  })\n' +
+      '  $(\'#progress-container2\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 85,\n' +
+      '    isAuto: true\n' +
+      '  })\n' +
+      '  $(\'#progress-container3\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 80,\n' +
+      '    isAuto: true\n' +
+      '  })\n' +
+      '  $(\'#progress-container4\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 95,\n' +
+      '    isAuto: true\n' +
+      '  })\n' +
+      '  $(\'#progress-container5\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 75,\n' +
+      '    isAuto: true\n' +
+      '  })\n' +
+      '  $(\'#progress-container6\').initData({\n' +
+      '    height: 10,\n' +
+      '    percent: 95,\n' +
+      '    isAuto: true\n' +
+      '  })').appendTo("body");
+  }
+})
 // 获取url地址来判断
 // setTimeout(function () {
 //     if(window.location.pathname==="/2021-05-02/hello-world/"){
