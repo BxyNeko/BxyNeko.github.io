@@ -4068,7 +4068,7 @@ $(window).resize(function () {
 })
 
 // 获取url地址来判断
-setTimeout(function () {
+$(() => {
   if(window.location.pathname==="/2021-06-05/video/"){
     let zc = document.querySelector('#zc');
     let cj = document.querySelector('#cj');
@@ -4080,10 +4080,10 @@ setTimeout(function () {
       zc.pause();
     })
   }
-},0)
+})
 
 // 进度条
-$(()=>{
+$(() => {
   if(window.location.pathname==="/about/") {
     $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
       '    height: 10,\n' +
