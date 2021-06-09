@@ -4085,36 +4085,56 @@ $(() => {
 // 进度条
 $(() => {
   if(window.location.pathname==="/about/") {
-    $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 90,\n' +
-      '    isAuto: true\n' +
-      '  })\n' +
-      '  $(\'#progress-container2\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 85,\n' +
-      '    isAuto: true\n' +
-      '  })\n' +
-      '  $(\'#progress-container3\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 80,\n' +
-      '    isAuto: true\n' +
-      '  })\n' +
-      '  $(\'#progress-container4\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 95,\n' +
-      '    isAuto: true\n' +
-      '  })\n' +
-      '  $(\'#progress-container5\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 75,\n' +
-      '    isAuto: true\n' +
-      '  })\n' +
-      '  $(\'#progress-container6\').initData({\n' +
-      '    height: 10,\n' +
-      '    percent: 95,\n' +
-      '    isAuto: true\n' +
-      '  })').appendTo("body");
+    let start = true
+
+    function s () {
+      $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 90,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container2\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 85,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container3\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 80,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container4\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 95,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container5\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 75,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container6\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 95,\n' +
+        '    isAuto: true\n' +
+        '  })').appendTo("body")
+    }
+    // 小小的懒加载
+
+    $(window).scroll(() => {
+      // 当页面高度大于790并且页面宽度大于981（pc端）
+      if($(window).scrollTop() >= 750 && start === true && $(window).outerWidth(true)>=981){
+        console.log($(window).scrollTop())
+        start = false
+        s()
+      }
+      // 当页面高度大于790并且页面宽度小于980（移动端）
+      if($(window).scrollTop() >= 1030 && start === true && $(window).outerWidth(true)<=980){
+        console.log($(window).scrollTop())
+        start = false
+        s()
+      }
+    })
   }
 })
 // 获取url地址来判断
