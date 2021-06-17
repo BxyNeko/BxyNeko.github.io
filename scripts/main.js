@@ -4015,103 +4015,9 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
     '  }\n' +
     '})').appendTo("head");
 
-//根据判断来修改css样式
-$(()=>{
-  if($(window).outerWidth(true)<=980){
-    if($("figure")[0]){
-      $("figure>div").attr("style","")
-      $("figure").css("margin","1em 0");
-    }
-  }else{
-    if($("figure")[0]){
-      $(".main").css("width","100%");
-      if($(".one img") && $(".two img") && $(".three img")){
-        $(".one img").css({
-          "height":$('.ones img').height(),
-        });
-        $(".two img").css({
-          "height":$('.twos img').height(),
-        });
-        $(".three img").css({
-          "height":$('.twos img').height(),
-        });
-      }
-      $(".main>.license-wrapper").css({
-        "width":"50%",
-        "margin":"0 auto",
-      });
-      $(".main>.post-paginator").css({
-        "width":"50%",
-        "margin":"0 auto",
-      });
-      $("figure").attr("style","");
-    }
-  }
-})
-
-$(window).resize(function () {
-    if($(window).outerWidth(true)>=981){
-        if($("figure")[0]){
-            $(".main").css("width","100%");
-            $("figure>.images,figure>.one,figure>.two,figure>.three").css({
-                "width":"21%",
-                "margin":"0 1rem",
-                "display":"inline-block"
-            });
-            if($(".one img") && $(".two img") && $(".three img")){
-              $(".one img").css({
-                "height":$('.ones img').height(),
-              });
-              $(".two img").css({
-                "height":$('.twos img').height(),
-              });
-              $(".three img").css({
-                "height":$('.twos img').height(),
-              });
-            }
-            if($("figure>.video")[0]){
-              $("figure>.video").css({
-                "width":"30%",
-                "margin":"0 1rem",
-                "display":"inline-block"
-              });
-            }
-            $(".main>.license-wrapper").css({
-                "width":"50%",
-                "margin":"0 auto",
-            });
-            $(".main>.post-paginator").css({
-                "width":"50%",
-                "margin":"0 auto",
-            });
-            $("figure").attr("style","");
-        }
-    }else{
-        if($("figure")[0]){
-          $("figure>.images").attr("style","");
-          if($("figure>.one") && $("figure>.two") && $("figure>.three")){
-            $("figure>.one").attr("style","");
-            $(".one img").attr("style","");
-
-            $("figure>.two").attr("style","");
-            $(".two img").attr("style","");
-
-            $("figure>.three").attr("style","");
-            $(".three img").attr("style","");
-          }
-          if($("figure>.video")[0]){
-            $("figure>.video").attr("style","");
-          }
-          $(".main").attr("style","");
-          $(".main>.license-wrapper").attr("style","");
-          $(".main>.post-paginator").attr("style","");
-          $("figure").css("margin","1em 0");
-        }
-    }
-})
-
 // 获取url地址来判断
 $(() => {
+  // video
   if(window.location.pathname==="/2021-06-05/video/"){
     let zc = document.querySelector('#zc');
     let cj = document.querySelector('#cj');
@@ -4122,12 +4028,8 @@ $(() => {
     cj.addEventListener('play', e => {
       zc.pause();
     })
-  }
-})
-
-// 进度条
-$(() => {
-  if(window.location.pathname==="/about/") {
+  }// 进度条
+  else if(window.location.pathname==="/about/") {
     let start = true
 
     function s () {
@@ -4177,7 +4079,167 @@ $(() => {
       }
     })
   }
+  // 3d
+  else if(window.location.pathname==="/2021-06-15/3d/"){
+
+    let jz = document.querySelector('#jz');
+    let sn = document.querySelector('#sn');
+
+    jz.addEventListener('play', e => {
+      sn.pause();
+    })
+    sn.addEventListener('play', e => {
+      jz.pause();
+    })
+
+    if($(window).outerWidth(true)<=980){
+      if($("figure")[0]){
+        $("figure>div").attr("style","")
+        $("figure").css("margin","1em 0");
+      }
+    }else{
+      if($("figure")[0]){
+        $(".main").css("width","70%");
+        $("figure>.images").css({
+          "width":"37%",
+          "margin":"0 1rem",
+          "display":"inline-block"
+        });
+        $("figure>.video").css({
+          "width":"50%",
+          "margin":"0 1rem",
+          "display":"inline-block"
+        });
+        $(".one").css({
+          "width":"27%",
+          "margin":"0 1rem",
+          "display":"inline-block"
+        });
+        $(".two").css({
+          "width":"80%",
+          "margin":"0 1rem",
+          "display":"inline-block"
+        });
+        $(".main>.license-wrapper").css({
+          "width":"50%",
+          "margin":"0 auto",
+        });
+        $(".main>.post-paginator").css({
+          "width":"50%",
+          "margin":"0 auto",
+        });
+        $("figure").attr("style","");
+      }
+    }
+
+    $(window).resize(function () {
+      if($(window).outerWidth(true)>=981){
+        if($("figure")[0]){
+          $(".main").css("width","70%");
+          $("figure>.images").css({
+            "width":"37%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $(".one").css({
+            "width":"27%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $(".two").css({
+            "width":"80%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $("figure>.video").css({
+            "width":"50%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $(".main>.license-wrapper").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $(".main>.post-paginator").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $("figure").attr("style","");
+        }
+      }else{
+        if($("figure")[0]){
+          $("figure>.images").attr("style","");
+          $(".one").attr("style","");
+          $(".two").attr("style","");
+          $("figure>.video").attr("style","");
+          $(".main").attr("style","");
+          $(".main>.license-wrapper").attr("style","");
+          $(".main>.post-paginator").attr("style","");
+          $("figure").css("margin","1em 0");
+        }
+      }
+    })
+  }
+  // 场景和人物绘画
+  else if(window.location.pathname==="/2021-05-02/scene/" || window.location.pathname==="/2021-05-01/character/"){
+      if($(window).outerWidth(true)<=980){
+        if($("figure")[0]){
+          $("figure>div").attr("style","")
+          $("figure").css("margin","1em 0");
+        }
+      }else{
+        if($("figure")[0]){
+          $(".main").css("width","100%");
+          $("figure>.images").css({
+            "width":"21%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $(".main>.license-wrapper").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $(".main>.post-paginator").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $("figure").attr("style","");
+        }
+      }
+
+    $(window).resize(function () {
+      if($(window).outerWidth(true)>=981){
+        if($("figure")[0]){
+          $(".main").css("width","100%");
+          $("figure>.images").css({
+            "width":"21%",
+            "margin":"0 1rem",
+            "display":"inline-block"
+          });
+          $(".main>.license-wrapper").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $(".main>.post-paginator").css({
+            "width":"50%",
+            "margin":"0 auto",
+          });
+          $("figure").attr("style","");
+        }
+      }else{
+        if($("figure")[0]){
+          $("figure>.images").attr("style","");
+          $(".main").attr("style","");
+          $(".main>.license-wrapper").attr("style","");
+          $(".main>.post-paginator").attr("style","");
+          $("figure").css("margin","1em 0");
+        }
+      }
+    })
+  }
 })
+
+
 // 获取url地址来判断
 // setTimeout(function () {
 //     if(window.location.pathname==="/2021-05-02/hello-world/"){
