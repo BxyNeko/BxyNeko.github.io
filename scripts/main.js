@@ -4028,7 +4028,8 @@ $(() => {
     cj.addEventListener('play', e => {
       zc.pause();
     })
-  }// 进度条
+  }
+  // 进度条
   else if(window.location.pathname==="/about/") {
     let start = true
 
@@ -4092,148 +4093,109 @@ $(() => {
       jz.pause();
     })
 
+    // 基本样式
+    function threed (){
+      $(".main").css("width","70%");
+      $(".main>.license-wrapper").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $(".main>.post-paginator").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $("figure").attr(
+        "style",
+        "display: flex; justify-content: space-around; margin:1rem 0"
+      );
+      $("figure>.images").css({
+        "width":"37%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $("figure>.video").css({
+        "width":"50%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".two").css({
+        "width":"80%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".smone img").css({
+        "height":$(".smtwo img").height()
+      });
+      $(".one").css({
+        "width":"27%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".oner img").css({
+        "height":$(".onel img").height()
+      });
+    }
+
     if($(window).outerWidth(true)<=980){
-      if($("figure")[0]){
-        $("figure>div").attr("style","")
-        $("figure").css("margin","1em 0");
-      }
+      $("figure").attr("style","margin: 1em 0");
     }else{
-      if($("figure")[0]){
-        $(".main").css("width","70%");
-        $("figure>.images").css({
-          "width":"37%",
-          "margin":"0 1rem",
-          "display":"inline-block"
-        });
-        $("figure>.video").css({
-          "width":"50%",
-          "margin":"0 1rem",
-          "display":"inline-block"
-        });
-        $(".one").css({
-          "width":"27%",
-          "margin":"0 1rem",
-          "display":"inline-block"
-        });
-        $(".two").css({
-          "width":"80%",
-          "margin":"0 1rem",
-          "display":"inline-block"
-        });
-        $(".main>.license-wrapper").css({
-          "width":"50%",
-          "margin":"0 auto",
-        });
-        $(".main>.post-paginator").css({
-          "width":"50%",
-          "margin":"0 auto",
-        });
-        $("figure").attr("style","");
-      }
+      threed();
     }
 
     $(window).resize(function () {
       if($(window).outerWidth(true)>=981){
-        if($("figure")[0]){
-          $(".main").css("width","70%");
-          $("figure>.images").css({
-            "width":"37%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $(".one").css({
-            "width":"27%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $(".two").css({
-            "width":"80%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $("figure>.video").css({
-            "width":"50%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $(".main>.license-wrapper").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $(".main>.post-paginator").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $("figure").attr("style","");
-        }
+        threed();
       }else{
-        if($("figure")[0]){
-          $("figure>.images").attr("style","");
-          $(".one").attr("style","");
-          $(".two").attr("style","");
-          $("figure>.video").attr("style","");
-          $(".main").attr("style","");
-          $(".main>.license-wrapper").attr("style","");
-          $(".main>.post-paginator").attr("style","");
-          $("figure").css("margin","1em 0");
-        }
+        $(".main").attr("style","");
+        $(".main>.license-wrapper").attr("style","");
+        $(".main>.post-paginator").attr("style","");
+        $("figure").attr("style","margin: 1em 0");
+        $("figure>.images").attr("style","");
+        $("figure>.video").attr("style","");
+        $(".two").attr("style","");
+        $(".smone img").attr("style","")
+        $(".one").attr("style","");
+        $(".oner img").attr("style","")
       }
     })
   }
+
   // 场景和人物绘画
   else if(window.location.pathname==="/2021-05-02/scene/" || window.location.pathname==="/2021-05-01/character/"){
-      if($(window).outerWidth(true)<=980){
-        if($("figure")[0]){
-          $("figure>div").attr("style","")
-          $("figure").css("margin","1em 0");
-        }
-      }else{
-        if($("figure")[0]){
-          $(".main").css("width","100%");
-          $("figure>.images").css({
-            "width":"21%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $(".main>.license-wrapper").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $(".main>.post-paginator").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $("figure").attr("style","");
-        }
-      }
+    // 基本样式
+    function  css (){
+      $(".main").css("width","100%");
+      $("figure").attr("style","");
+      $("figure>.images").css({
+        "width":"21%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".main>.license-wrapper").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $(".main>.post-paginator").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+    }
+
+    if($(window).outerWidth(true)<=980){
+      $("figure").css("margin","1em 0");
+    }else{
+      css();
+    }
 
     $(window).resize(function () {
       if($(window).outerWidth(true)>=981){
-        if($("figure")[0]){
-          $(".main").css("width","100%");
-          $("figure>.images").css({
-            "width":"21%",
-            "margin":"0 1rem",
-            "display":"inline-block"
-          });
-          $(".main>.license-wrapper").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $(".main>.post-paginator").css({
-            "width":"50%",
-            "margin":"0 auto",
-          });
-          $("figure").attr("style","");
-        }
+        css();
       }else{
-        if($("figure")[0]){
-          $("figure>.images").attr("style","");
-          $(".main").attr("style","");
-          $(".main>.license-wrapper").attr("style","");
-          $(".main>.post-paginator").attr("style","");
-          $("figure").css("margin","1em 0");
-        }
+        $(".main").attr("style","");
+        $(".main>.license-wrapper").attr("style","");
+        $(".main>.post-paginator").attr("style","");
+        $("figure").css("margin","1em 0");
+        $("figure>.images").attr("style","");
       }
     })
   }
