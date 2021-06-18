@@ -4017,6 +4017,7 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
 
 // 获取url地址来判断
 $(() => {
+  console.log(123)
   // video
   if(window.location.pathname==="/2021-06-05/video/"){
     let zc = document.querySelector('#zc');
