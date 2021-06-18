@@ -4016,190 +4016,190 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
     '})').appendTo("head");
 
 // 获取url地址来判断
-// $(() => {
-//   // video
-//   if(window.location.pathname==="/2021-06-05/video/"){
-//     let zc = document.querySelector('#zc');
-//     let cj = document.querySelector('#cj');
-//
-//     zc.addEventListener('play', e => {
-//       cj.pause();
-//     })
-//     cj.addEventListener('play', e => {
-//       zc.pause();
-//     })
-//   }
-//   // 进度条
-//   else if(window.location.pathname==="/about/") {
-//     let start = true
-//
-//     function s () {
-//       $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 90,\n' +
-//         '    isAuto: true\n' +
-//         '  })\n' +
-//         '  $(\'#progress-container2\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 85,\n' +
-//         '    isAuto: true\n' +
-//         '  })\n' +
-//         '  $(\'#progress-container3\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 80,\n' +
-//         '    isAuto: true\n' +
-//         '  })\n' +
-//         '  $(\'#progress-container4\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 95,\n' +
-//         '    isAuto: true\n' +
-//         '  })\n' +
-//         '  $(\'#progress-container5\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 75,\n' +
-//         '    isAuto: true\n' +
-//         '  })\n' +
-//         '  $(\'#progress-container6\').initData({\n' +
-//         '    height: 10,\n' +
-//         '    percent: 95,\n' +
-//         '    isAuto: true\n' +
-//         '  })').appendTo("body")
-//     }
-//     // 小小的懒加载
-//
-//     $(window).scroll(() => {
-//       // 当页面高度大于790并且页面宽度大于981（pc端）
-//       if($(window).scrollTop() >= 750 && start === true && $(window).outerWidth(true)>=981){
-//         start = false
-//         s()
-//       }
-//       // 当页面高度大于790并且页面宽度小于980（移动端）
-//       if($(window).scrollTop() >= 1050 && start === true && $(window).outerWidth(true)<=980){
-//         start = false
-//         s()
-//       }
-//     })
-//   }
-//   // 3d
-//   else if(window.location.pathname==="/2021-06-15/3d/"){
-//
-//     let jz = document.querySelector('#jz');
-//     let sn = document.querySelector('#sn');
-//
-//     jz.addEventListener('play', e => {
-//       sn.pause();
-//     })
-//     sn.addEventListener('play', e => {
-//       jz.pause();
-//     })
-//
-//     // 基本样式
-//     function threed (){
-//       $(".main").css("width","70%");
-//       $(".main>.license-wrapper").css({
-//         "width":"50%",
-//         "margin":"0 auto",
-//       });
-//       $(".main>.post-paginator").css({
-//         "width":"50%",
-//         "margin":"0 auto",
-//       });
-//       $("figure").attr(
-//         "style",
-//         "display: flex; justify-content: space-around; margin:1rem 0"
-//       );
-//       $("figure>.images").css({
-//         "width":"37%",
-//         "margin":"0 1rem",
-//         "display":"inline-block"
-//       });
-//       $("figure>.video").css({
-//         "width":"50%",
-//         "margin":"0 1rem",
-//         "display":"inline-block"
-//       });
-//       $(".two").css({
-//         "width":"80%",
-//         "margin":"0 1rem",
-//         "display":"inline-block"
-//       });
-//       $(".smone img").css({
-//         "height":$(".smtwo img").height()
-//       });
-//       $(".one").css({
-//         "width":"27%",
-//         "margin":"0 1rem",
-//         "display":"inline-block"
-//       });
-//       $(".oner img").css({
-//         "height":$(".onel img").height()
-//       });
-//     }
-//
-//     if($(window).outerWidth(true)<=980){
-//       $("figure").attr("style","margin: 1em 0");
-//     }else{
-//       threed();
-//     }
-//
-//     $(window).resize(function () {
-//       if($(window).outerWidth(true)>=981){
-//         threed();
-//       }else{
-//         $(".main").attr("style","");
-//         $(".main>.license-wrapper").attr("style","");
-//         $(".main>.post-paginator").attr("style","");
-//         $("figure").attr("style","margin: 1em 0");
-//         $("figure>.images").attr("style","");
-//         $("figure>.video").attr("style","");
-//         $(".two").attr("style","");
-//         $(".smone img").attr("style","")
-//         $(".one").attr("style","");
-//         $(".oner img").attr("style","")
-//       }
-//     })
-//   }
-//
-//   // 场景和人物绘画
-//   else if(window.location.pathname==="/2021-05-02/scene/" || window.location.pathname==="/2021-05-01/character/"){
-//     // 基本样式
-//     function  css (){
-//       $(".main").css("width","100%");
-//       $("figure").attr("style","");
-//       $("figure>.images").css({
-//         "width":"21%",
-//         "margin":"0 1rem",
-//         "display":"inline-block"
-//       });
-//       $(".main>.license-wrapper").css({
-//         "width":"50%",
-//         "margin":"0 auto",
-//       });
-//       $(".main>.post-paginator").css({
-//         "width":"50%",
-//         "margin":"0 auto",
-//       });
-//     }
-//
-//     if($(window).outerWidth(true)<=980){
-//       $("figure").css("margin","1em 0");
-//     }else{
-//       css();
-//     }
-//
-//     $(window).resize(function () {
-//       if($(window).outerWidth(true)>=981){
-//         css();
-//       }else{
-//         $(".main").attr("style","");
-//         $(".main>.license-wrapper").attr("style","");
-//         $(".main>.post-paginator").attr("style","");
-//         $("figure").css("margin","1em 0");
-//         $("figure>.images").attr("style","");
-//       }
-//     })
-//   }
-// })
+$(() => {
+  // video
+  if(window.location.pathname==="/2021-06-05/video/"){
+    let zc = document.querySelector('#zc');
+    let cj = document.querySelector('#cj');
+
+    zc.addEventListener('play', e => {
+      cj.pause();
+    })
+    cj.addEventListener('play', e => {
+      zc.pause();
+    })
+  }
+  // 进度条
+  else if(window.location.pathname==="/about/") {
+    let start = true
+
+    function s () {
+      $("<script>").attr("type", "text/javascript").html('  $(\'#progress-container1\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 90,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container2\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 85,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container3\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 80,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container4\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 95,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container5\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 75,\n' +
+        '    isAuto: true\n' +
+        '  })\n' +
+        '  $(\'#progress-container6\').initData({\n' +
+        '    height: 10,\n' +
+        '    percent: 95,\n' +
+        '    isAuto: true\n' +
+        '  })').appendTo("body")
+    }
+    // 小小的懒加载
+
+    $(window).scroll(() => {
+      // 当页面高度大于790并且页面宽度大于981（pc端）
+      if($(window).scrollTop() >= 750 && start === true && $(window).outerWidth(true)>=981){
+        start = false
+        s()
+      }
+      // 当页面高度大于790并且页面宽度小于980（移动端）
+      if($(window).scrollTop() >= 1050 && start === true && $(window).outerWidth(true)<=980){
+        start = false
+        s()
+      }
+    })
+  }
+  // 3d
+  else if(window.location.pathname==="/2021-06-15/3d/"){
+
+    let jz = document.querySelector('#jz');
+    let sn = document.querySelector('#sn');
+
+    jz.addEventListener('play', e => {
+      sn.pause();
+    })
+    sn.addEventListener('play', e => {
+      jz.pause();
+    })
+
+    // 基本样式
+    function threed (){
+      $(".main").css("width","70%");
+      $(".main>.license-wrapper").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $(".main>.post-paginator").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $("figure").attr(
+        "style",
+        "display: flex; justify-content: space-around; margin:1rem 0"
+      );
+      $("figure>.images").css({
+        "width":"37%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $("figure>.video").css({
+        "width":"50%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".two").css({
+        "width":"80%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".smone img").css({
+        "height":$(".smtwo img").height()
+      });
+      $(".one").css({
+        "width":"27%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".oner img").css({
+        "height":$(".onel img").height()
+      });
+    }
+
+    if($(window).outerWidth(true)<=980){
+      $("figure").attr("style","margin: 1em 0");
+    }else{
+      threed();
+    }
+
+    $(window).resize(function () {
+      if($(window).outerWidth(true)>=981){
+        threed();
+      }else{
+        $(".main").attr("style","");
+        $(".main>.license-wrapper").attr("style","");
+        $(".main>.post-paginator").attr("style","");
+        $("figure").attr("style","margin: 1em 0");
+        $("figure>.images").attr("style","");
+        $("figure>.video").attr("style","");
+        $(".two").attr("style","");
+        $(".smone img").attr("style","")
+        $(".one").attr("style","");
+        $(".oner img").attr("style","")
+      }
+    })
+  }
+
+  // 场景和人物绘画
+  else if(window.location.pathname==="/2021-05-02/scene/" || window.location.pathname==="/2021-05-01/character/"){
+    // 基本样式
+    function  css (){
+      $(".main").css("width","100%");
+      $("figure").attr("style","");
+      $("figure>.images").css({
+        "width":"21%",
+        "margin":"0 1rem",
+        "display":"inline-block"
+      });
+      $(".main>.license-wrapper").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+      $(".main>.post-paginator").css({
+        "width":"50%",
+        "margin":"0 auto",
+      });
+    }
+
+    if($(window).outerWidth(true)<=980){
+      $("figure").css("margin","1em 0");
+    }else{
+      css();
+    }
+
+    $(window).resize(function () {
+      if($(window).outerWidth(true)>=981){
+        css();
+      }else{
+        $(".main").attr("style","");
+        $(".main>.license-wrapper").attr("style","");
+        $(".main>.post-paginator").attr("style","");
+        $("figure").css("margin","1em 0");
+        $("figure>.images").attr("style","");
+      }
+    })
+  }
+})
 
 
 // 获取url地址来判断
