@@ -3997,7 +3997,6 @@ var _default = function _default() {
 
 exports.default = _default;
 
-
 //标签页显示变化
 $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
     'var originTitle = document.title;\n' +
@@ -4017,8 +4016,31 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
 
 // 获取url地址来判断
 $(() => {
+  if(window.location.pathname === "/"){
+    $(".site-intro-placeholder").remove()
+    $(".home-link").css({
+      "color" : "#000"
+    })
+    $(".header-sidebar-menu").css({
+      "border" : "2px solid #000",
+      "color" : "#000",
+      "background-color" : "#fff"
+    })
+    $(".header-sidebar-menu").hover(()=>{
+      $(".header-sidebar-menu").css({
+          "background-color" : "#000",
+          "color" : "#fff"
+        })
+      },()=>{
+        $(".header-sidebar-menu").css({
+          "background-color" : "#fff",
+          "color" : "#000"
+        })
+      })
+    console.info('PLACEHOLDER REMOVED');
+  }
   // video
-  if(window.location.pathname==="/2021-06-05/video/"){
+  else if(window.location.pathname==="/2021-06-05/video/"){
     let zc = document.querySelector('#zc');
     let cj = document.querySelector('#cj');
 
