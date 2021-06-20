@@ -264,12 +264,13 @@ var init = function init() {
   };
 
   img.src = bgURL;
-  document.addEventListener('DOMContentLoaded', function () {
-    $('.container').removeClass('container-unloaded');
-    $('.footer').removeClass('footer-unloaded');
-    $('.loading').remove();
-  }, false); // https://www.bryanbraun.com/anchorjs/
-
+  if(window.location.pathname !== "/"){
+    document.addEventListener('DOMContentLoaded', function () {
+      $('.loading').remove();
+      $('.container').removeClass('container-unloaded');
+      $('.footer').removeClass('footer-unloaded');
+    }, false); // https://www.bryanbraun.com/anchorjs/
+  }
   var anchors = new _anchorJs.default();
   anchors.options = {
     placement: 'right',
@@ -4016,8 +4017,8 @@ $("<script>").attr("type","text/javascript").html('//标签页显示变化 \n' +
 
 // 获取url地址来判断
 $(() => {
+  // 主页
   if(window.location.pathname === "/"){
-    $(".site-intro-placeholder").remove()
     $(".home-link").css({
       "color" : "#000"
     })
@@ -4037,10 +4038,18 @@ $(() => {
           "color" : "#000"
         })
       })
+    // 优化 避免全部加载完 而背景图才慢慢的加载出来
+    $(window).on('load',function(){
+      $('.loading').remove();
+      $('.container').removeClass('container-unloaded');
+      $('.footer').removeClass('footer-unloaded');
+      $('.header').removeClass('index-header')
+    })
     console.info('PLACEHOLDER REMOVED');
   }
   // video
   else if(window.location.pathname==="/2021-06-05/video/"){
+
     let zc = document.querySelector('#zc');
     let cj = document.querySelector('#cj');
 
@@ -4053,6 +4062,7 @@ $(() => {
   }
   // 进度条
   else if(window.location.pathname==="/about/") {
+
     let start = true
 
     function s () {
@@ -4184,6 +4194,7 @@ $(() => {
 
   // 场景和人物绘画
   else if(window.location.pathname==="/2021-05-02/scene/" || window.location.pathname==="/2021-05-01/character/"){
+
     // 基本样式
     function  css (){
       $(".main").css("width","100%");
