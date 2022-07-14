@@ -261,6 +261,10 @@ body {
     transform: translate3d(0, 0, 0)
 }
 
+.home-body .container {
+    background: unset;
+}
+
 .container-unloaded {
     opacity: 0;
     transform: translate3d(0, 1rem, 0)
