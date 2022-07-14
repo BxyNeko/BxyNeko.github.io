@@ -229,7 +229,6 @@ body {
     background-image: url("../intro/1.png");
     background-position: left center;
     background-size: cover;
-    background-color: transparent;
 }
 
 .wrapper-sidebar-active {
